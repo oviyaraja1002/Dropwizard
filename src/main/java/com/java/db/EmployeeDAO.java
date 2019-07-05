@@ -18,7 +18,7 @@ public interface EmployeeDAO {
     @SqlQuery("select * from `employee_table` where emp_id= :emp_id")
     public Employee getEmploye(@Bind("emp_id") final int emp_id);
 
-    @SqlUpdate("INSERT INTO `employee_table` (`emp_id`,`emp_name`,`DOB`,`Age`,`Place`,`Mobile`,`dept_no`) VALUES (:emp_id , :emp_name, :DOB, :Age, :Place, :Mobile, :dept_no );")
+    @SqlUpdate("INSERT INTO `employee_table` (`emp_id`,`emp_name`,`dOB`,`age`,`place`,`mobile`,`dept_no`) VALUES (:emp_id , :emp_name, :dOB, :age, :place, :mobile, :dept_no );")
     public void insert(@BindBean Employee employee);
 
     @SqlUpdate("update employee_table set emp_name = coalesce(:emp_name ,emp_name) where emp_id= :emp_id")

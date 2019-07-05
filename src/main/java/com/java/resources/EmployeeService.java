@@ -30,7 +30,7 @@ public class EmployeeService {
         public Employee editEmploye(Employee employee)
         {
             this.employeeDAO.editEmploye(employee);
-            return this.employeeDAO.getEmploye(Integer.parseInt(String.valueOf(employee.getemp_id())));
+            return this.employeeDAO.getEmploye(Integer.parseInt(String.valueOf(employee.getEmp_id())));
         }
         public int deleteEmployee(int id)
         {

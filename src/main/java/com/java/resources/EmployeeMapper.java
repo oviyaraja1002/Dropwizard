@@ -10,14 +10,13 @@ import java.sql.SQLException;
 public class EmployeeMapper implements ResultSetMapper<Employee> {
     public Employee map(int i, ResultSet resultSet, StatementContext statementContext) throws SQLException {
 
-
         Employee employee = new Employee(
                 resultSet.getInt("emp_id"),
                 resultSet.getString("emp_name"),
-                resultSet.getString("DOB"),
-                resultSet.getInt("Age"),
-                resultSet.getString("Place"),
-                resultSet.getInt("Mobile"),
+                resultSet.getString("dOB"),
+                resultSet.getInt("age"),
+                resultSet.getString("place"),
+                resultSet.getInt("mobile"),
                 resultSet.getInt("dept_no")
         );
         return employee;
