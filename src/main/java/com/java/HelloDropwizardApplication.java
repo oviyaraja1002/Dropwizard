@@ -1,7 +1,10 @@
 package com.java;
 
 
+import com.java.db.DepartmentDAO;
 import com.java.db.EmployeeDAO;
+import com.java.resources.DepartmentResources;
+import com.java.resources.DepartmentService;
 import com.java.resources.DropwizardResources;
 import com.java.resources.EmployeeService;
 import io.dropwizard.Application;
@@ -22,6 +25,15 @@ public class HelloDropwizardApplication extends Application<HelloDropwizardConfi
 
         final DropwizardResources employeeResources = new DropwizardResources(employeeService);
         environment.jersey().register(employeeResources);
+        final DepartmentDAO departmentDAO=dbi.onDemand(DepartmentDAO.class);
+
+        final DepartmentService departmentService=new DepartmentService(departmentDAO);
+
+
+
+        final DepartmentResources departmentResources=new DepartmentResources(departmentService);
+
+        environment.jersey().register(departmentResources);
     }
 }
 

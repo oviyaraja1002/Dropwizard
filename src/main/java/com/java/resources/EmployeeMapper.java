@@ -1,6 +1,6 @@
 package com.java.resources;
 
-import model.Employee;
+import com.java.model.Employee;
 import org.skife.jdbi.v2.StatementContext;
 import org.skife.jdbi.v2.tweak.ResultSetMapper;
 

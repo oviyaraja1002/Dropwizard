@@ -1,7 +1,7 @@
 package com.java.resources;
 
 import com.java.db.EmployeeDAO;
-import model.Employee;
+import com.java.model.Employee;
 
 import java.util.List;
 
@@ -12,13 +12,30 @@ public class EmployeeService {
         this.employeeDAO = employeeDAO;
     }
 
-    public List<Employee> getEmployee() {
+    public List<Employee> getEmployee()
+    {
         return this.employeeDAO.getEmployee();
     }
 
-    public Employee getEmployee1(final int emp_id) {
-        System.out.println("emp_id is" + emp_id);
-        return this.employeeDAO.getEmployee1(emp_id);
+    public Employee getEmploye(final int empid) {
+
+        return this.employeeDAO.getEmploye(empid);
     }
-}
+
+        public void insert (Employee employee)
+        {
+            this.employeeDAO.insert(employee);
+        }
+
+        public Employee editEmploye(Employee employee)
+        {
+            this.employeeDAO.editEmploye(employee);
+            return this.employeeDAO.getEmploye(Integer.parseInt(String.valueOf(employee.getemp_id())));
+        }
+        public int deleteEmployee(int id)
+        {
+            return this.employeeDAO.deleteEmployee(id);
+        }
+    }
+
 
